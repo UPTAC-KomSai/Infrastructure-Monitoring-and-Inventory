@@ -1,1 +1,1 @@
-# Infrastructure Monitoring and Inventory by Interactive Module for Innovation
+# Infrastructure Monitoring and Inventory by Interactive Modules for Innovation
