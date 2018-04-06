@@ -35,10 +35,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'cucumber-rails', :require => false
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner', '~> 1.5.0'
-# gem 'database_cleaner x64-mingw32'
+  gem 'database_cleaner'
 end
 
 group :development do
