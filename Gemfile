@@ -37,7 +37,10 @@ group :development, :test do
   gem 'byebug'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner', '~> 1.5.0'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+#  gem 'database_cleaner', '~> 1.5.0'
 # gem 'database_cleaner x64-mingw32'
 end
 
