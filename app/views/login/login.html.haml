@@ -1,0 +1,31 @@
+!!! 5
+%html
+	%head
+		%title Login
+		= stylesheet_link_tag 'login'
+		= stylesheet_link_tag 'bootstrap'
+		= javascript_include_tag 'login'
+		= csrf_meta_tags
+		%link{:href => "/css/login.css", :rel => "stylesheet"}/
+	%body{:class => 'container'}
+		.jumbotron.vertical-center
+			.row.text-center
+				%img{:alt => "login-logo", :src => "login_logo.png", :width => '200', :height => '200'}/
+			%form.row.text-center{:action => "login", :method => "post"}
+				
+				%label.labels E-MAIL ADDRESS
+				%br/
+				%input.input-xxlarge{:placeholder => "example@up.edu.ph", :type => "text"}/
+				%label.labels PASSWORD
+				%br/
+				%input.input-xxlarge{:type => "password"}/
+				%br/
+				%button.btn.btn-primary{:type => "submit"} Submit
+
+
+				
+
+				
+			
+		
+		
