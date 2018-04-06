@@ -50,11 +50,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
-<<<<<<< HEAD
-=======
-  gem 'capybara'
   gem 'launchy'
->>>>>>> eee3ad0b1e8ee28e183852e2c72bdb368c8afbc5
 end
 
 group :development do
