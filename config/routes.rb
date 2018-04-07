@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 	root 'login#login'
-	post 'userlogin' => 'login#home'
+	post '/dashboard' => 'login#dashboard'
 	
 end

@@ -3,7 +3,7 @@ class LoginController < ApplicationController
 	
 	end
 	
-	def home
+	def dashboard
 	
 	end
 end
