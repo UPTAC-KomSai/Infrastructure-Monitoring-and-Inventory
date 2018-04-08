@@ -1,0 +1,19 @@
+!!! 5
+%html
+	%head
+		%title Profile Information
+		= stylesheet_link_tag 'login'
+		= stylesheet_link_tag 'bootstrap'
+		= javascript_include_tag 'login'
+		= csrf_meta_tags
+		%link{:href => "/css/profile_information.css", :rel => "stylesheet"}/
+	%body{:class => 'container'}
+		.row-xl-8
+			.jumbotron.vertical-center
+				%form{:name => "loguser",:action => "log_user", :method => "get"}
+					%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
+					%br/
+					%input.input-xxlarge{:name => 'emailAdd', :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/
+					%label.labels{:name => 'passwd'} PASSWORD
+					%br/
+					%input.input-xxlarge{:name => 'passwd',:value => @passwd, :type => "password"}/

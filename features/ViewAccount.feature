@@ -4,9 +4,8 @@ Feature: View Account Settings
    So that I can validate if all my account information are accurate
 
 Scenario: User view his account settings
-
    Given I am on the Profile Information page
-   And I am logged in as Maria Mary with email: maria.mary@up.edu.ph
+   And I am an authenticated user
    Then I should see an Account button
    When I click the Account button
    Then I should be on the Account Settings page

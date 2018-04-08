@@ -2,9 +2,6 @@
 %html
 	%head
 		%title Login
-		= stylesheet_link_tag 'login'
-		= stylesheet_link_tag 'bootstrap'
-		= javascript_include_tag 'login'
 		= csrf_meta_tags
 		%link{:href => "/css/login.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
@@ -20,12 +17,4 @@
 				%br/
 				%input.input-xxlarge{:name => 'passwd', :type => "password"}/
 				%br/
-				%button.btn.btn-primary{:type => "submit"} Log in
-
-
-				
-
-				
-			
-		
-		
+				%button.btn.btn-success{:type => "submit"} Log in
