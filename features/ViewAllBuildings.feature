@@ -7,5 +7,5 @@ Scenario: User wants to view the list of all buildings
   Given that I am in the Dashboard page
   Then I see the "View Buildings" button
   When I click the "View Buildings" button
-  Then I should be on the "View Buildings" page
+  Then I should be on the View Buildings page
   And I should see a list containing all the information of all the buildings

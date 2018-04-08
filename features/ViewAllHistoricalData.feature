@@ -1,13 +1,11 @@
-Feature: View the historical data of a specific building
+Feature: View the historical data of all buildings
    As a user
-   I want to search for a specific building and view its historical data
-   So that I don't need to traverse through the entire list of buildings
+   I want to view the historical data of all the buildings
+   So that I can identify the changes done to each building
 
-Scenario: Users search for a building in the view historical data page
-   Given that I am on the View Historical Data page
-   Then I should see a list containing the historical information of all the buildings
-   And I should see a search bar and a "Search“ button
-   When I fill in the "Search bar" with the name of the building
-   And click the “Search” button
-   Then I should be on the View Historical Data page
-   But the list will display only the information of that building
+Scenario: User wants to view the historical data all buildings
+   Given that I am on the Dashboard page
+   Then I see the "View historical data" button 
+   When I click "View historical data"
+   Then I should be on the View Historical data page
+   And I should see a list containing the historical information of all the buildings

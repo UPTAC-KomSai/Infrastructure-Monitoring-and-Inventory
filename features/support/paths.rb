@@ -18,6 +18,12 @@ module NavigationHelpers
 	
 	when /^the Dashboard\s?page$/
 	  '/dashboard'
+	  
+	when /^the Profile Information\s?page$/
+	  '/profile_information'
+	  
+	when /^the Account Setting\s?page$/
+	  '/account_setting'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

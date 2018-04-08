@@ -3,6 +3,7 @@ Feature: Delete a building
   I should be able to delete a building
   So that the number of buildings will be updated
 
+Scenario: Delete a building  
   Given that I am in the Dashboard page
   When I click the "Building Options" button
   Then I should be on the Building Options page
@@ -11,4 +12,3 @@ Feature: Delete a building
   And press "CONFIRM"
   Then I should be still on the Building Options page
   And I should not see the building that was deleted
-

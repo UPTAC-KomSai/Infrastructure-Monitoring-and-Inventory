@@ -11,16 +11,16 @@
 		.jumbotron.vertical-center
 			.row.text-center
 				%img{:alt => "login-logo", :src => "login_logo.png", :width => '200', :height => '200'}/
-			%form.row.text-center{:action => "dashboard", :method => "post"}
+			%form.row.text-center{:name => "loguser",:action => "log_user", :method => "get"}
 				
-				%label.labels E-MAIL ADDRESS
+				%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
 				%br/
-				%input.input-xxlarge{:placeholder => "example@up.edu.ph", :type => "text"}/
-				%label.labels PASSWORD
+				%input.input-xxlarge{:name => 'emailadd', :placeholder => "example@up.edu.ph", :type => "text"}/
+				%label.labels{:name => 'passwd'} PASSWORD
 				%br/
-				%input.input-xxlarge{:type => "password"}/
+				%input.input-xxlarge{:name => 'passwd', :type => "password"}/
 				%br/
-				%button.btn.btn-primary{:type => "submit"} Submit
+				%button.btn.btn-primary{:type => "submit"} Log in
 
 
 				
