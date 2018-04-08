@@ -4,9 +4,9 @@ Feature: User Log out
 	So that I can sign off from the system
 Scenario: User successfully logged out
 	Given I am on the Home page
-	When I click log out
+	When I click "Log out"
 	Then I should see the Log out page
-	When I click yes
+	When I click "Yes"
 	Then I should see the Login page
 	But I should see the Home page
 	
