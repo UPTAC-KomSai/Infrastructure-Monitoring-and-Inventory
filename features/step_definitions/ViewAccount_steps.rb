@@ -1,28 +1,8 @@
 
-And /^(?:|I )am an authenticated user$/ do
-	user = User.create!(:email => 'taylor@up.edu.ph', :password => 'swift')
-	visit('/')
-	within('form.row.text-center') do
-		fill_in 'emailadd', with: 'taylor@up.edu.ph'
-		fill_in 'passwd', with: 'swift'
-		expect(find_field('emailadd').value).to eq 'taylor@up.edu.ph'
-		expect(find_field('passwd').value).to eq 'swift'
-		
-	end
-	click_button 'Log in'
-	expect(page).to have_content('Log in successful.');
-end
-Then /^(?:|I )should see an (.+) button$/ do |string|
+
+Then /^(?:|I )should see an (.+) button on Profile Information page$/ do |string|
   visit('/profile_information')
-  page.should have_selector(:link_or_button, 'Account')
-end
-
-When /^(?:|I )click the (.+) button$/ do |string|
-  click_button string
-end
-
-Then /^(?:|I )should be on (.+)$/ do |page_name|
-  visit path_to(page_name)
+  page.should have_selector(:link_or_button, string)
 end
 
 Then ("I should see my own account information") do

@@ -22,7 +22,4 @@ class LoginController < ApplicationController
 		end
 	end
 	
-	def dashboard
-		
-	end
 end
