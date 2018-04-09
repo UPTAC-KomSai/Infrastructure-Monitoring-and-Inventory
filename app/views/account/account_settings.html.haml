@@ -6,14 +6,28 @@
 		= stylesheet_link_tag 'bootstrap'
 		= javascript_include_tag 'login'
 		= csrf_meta_tags
-		%link{:href => "/css/profile_information.css", :rel => "stylesheet"}/
+		%link{:href => "/css/account.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
-		.row-xl-8
-			.jumbotron.vertical-center
-				%form.account_settings{:name => "loguser",:action => "log_user", :method => "get"}
-					%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
-					%br/
-					%input.input-xxlarge{:name => 'emailAdd', :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/
-					%label.labels{:name => 'passwd'} PASSWORD
-					%br/
-					%input.input-xxlarge{:name => 'passwd',:value => @passwd, :type => "password"}/
+		.sidenav
+			%a{:href => '/dashboard'} DASHBOARD
+			%a{:href => '#'} VIEW BUILDINGS
+			%a{:href => '#'} ADD BUILDINGS
+			%a{:href => '#'} VIEW HISTORICAL DATA
+			%a{:href => '/profile_information'} ACCOUNT
+			%a{:href => '#'} LOG OUT
+		
+		.top_buttons
+			%a{:href => '/profile_information'} PROFILE
+			|
+			%a{:href => '/account_settings'} ACCOUNT
+		.container#divcen
+			%form.account_settings{:name => "account_settings",:action => "edit/account_settings", :method => "get"}
+				%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
+				%br/
+				%input.input-xxlarge{:name => 'emailAdd', :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/
+				%label.labels{:name => 'passwd'} PASSWORD
+				%br/
+				%input.input-xxlarge{:name => 'passwd',:value => @passwd, :type => "password"}/
+				%br/
+				%br/
+				%button.btn.btn-success{:type => "submit"} EDIT
