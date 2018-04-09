@@ -8,11 +8,11 @@ And /^(?:|I )am logged in as (.+) with email (.+)$/ do |name, email|
 
 end
 Then /^(?:|I )should see (.+) button$/ do |string|
-  page.should have_selector(:link_or_button, 'Account')
+  page.should have_selector(:link_or_button, string)
 end
 
 When /^(?:|I )click the (.+) button$/ do |string|
-  click_button string
+  click_on string
 end
 
 Then /^(?:|I )should be on the (.+)$/ do |page_name|

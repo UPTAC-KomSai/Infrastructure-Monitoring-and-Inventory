@@ -2,10 +2,7 @@
 %html
 	%head
 		%title Login
-		= stylesheet_link_tag 'login'
-		= stylesheet_link_tag 'bootstrap'
-		= javascript_include_tag 'login'
-		= csrf_meta_tags
+		%link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
 		%link{:href => "/css/login.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
 		.jumbotron.vertical-center

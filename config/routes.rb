@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 	get '/log_user' => 'login#log_user'
 	get '/dashboard' => 'login#dashboard'
 	get '/profile_information' => 'account#profile_information'
-	
+	get '/view_buildings' => 'view_buildings#view_buildings'
+	post '/view_buildings' => 'view_buildings#view_buildings'
 end

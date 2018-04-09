@@ -16,11 +16,12 @@ class LoginController < ApplicationController
 			redirect_to action: "login"
 		else
 			flash[:notice] = "Log in successful."
-			redirect_to action: "login"
+			redirect_to action: "dashboard"
 		end
 	end
 	
 	def dashboard
 		
 	end
+
 end
