@@ -16,12 +16,9 @@ class LoginController < ApplicationController
 			redirect_to action: "login"
 		else
 			flash[:notice] = "Log in successful."
-			redirect_to action: "dashboard"
+			session[:current_user_email] = @emailadd
+			session[:current_user_password] = @passwd
+			redirect_to controller: "account", action: "profile_information"
 		end
 	end
-	
-	def dashboard
-		
-	end
-
 end

@@ -1,0 +1,24 @@
+!!! 5
+%html
+	%head
+		%title Dashboard
+		= stylesheet_link_tag 'bootstrap'
+		= csrf_meta_tags
+		%link{:href => "/css/profile_information.css", :rel => "stylesheet"}/
+	%body{:class => 'container'}
+		%form{:name => 'accountbutton', :action => 'profile_information', :method => 'get'}
+			%button.btn.btn-primary{:type => 'submit'} Account
+		.row-xl-4
+			=link_to "DASHBOARD", '#'
+			%br/
+			=link_to "VIEW BUILDINGS", '#'
+			%br/
+			=link_to "ADD BUILDING", '#'
+			%br/
+			=link_to "VIEW HISTORICAL DATA", '#'
+			%br/
+			=link_to "ACCOUNT", '#'
+			%br/
+			=link_to "LOG OUT", '#'
+			%br/
+

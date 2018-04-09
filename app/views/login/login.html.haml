@@ -3,13 +3,13 @@
 	%head
 		%title Login
 		%link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+		= csrf_meta_tags
 		%link{:href => "/css/login.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
 		.jumbotron.vertical-center
 			.row.text-center
 				%img{:alt => "login-logo", :src => "login_logo.png", :width => '200', :height => '200'}/
 			%form.row.text-center{:name => "loguser",:action => "log_user", :method => "get"}
-				
 				%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
 				%br/
 				%input.input-xxlarge{:name => 'emailadd', :placeholder => "example@up.edu.ph", :type => "text"}/
@@ -17,12 +17,4 @@
 				%br/
 				%input.input-xxlarge{:name => 'passwd', :type => "password"}/
 				%br/
-				%button.btn.btn-primary{:type => "submit"} Log in
-
-
-				
-
-				
-			
-		
-		
+				%button.btn.btn-success{:type => "submit"} Log in
