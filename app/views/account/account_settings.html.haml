@@ -10,7 +10,7 @@
 	%body{:class => 'container'}
 		.row-xl-8
 			.jumbotron.vertical-center
-				%form{:name => "loguser",:action => "log_user", :method => "get"}
+				%form.account_settings{:name => "loguser",:action => "log_user", :method => "get"}
 					%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
 					%br/
 					%input.input-xxlarge{:name => 'emailAdd', :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/

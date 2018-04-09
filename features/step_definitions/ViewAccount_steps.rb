@@ -7,7 +7,7 @@ end
 
 Then ("I should see my own account information") do
 	
-    within('form') do
+    within('form.account_settings') do
 		expect(find_field('emailAdd').value).to eq 'taylor@up.edu.ph'
 		expect(find_field('passwd').value).to eq 'swift'
 	end

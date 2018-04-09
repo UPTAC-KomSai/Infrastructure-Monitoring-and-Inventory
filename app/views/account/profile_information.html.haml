@@ -23,3 +23,24 @@
 			%br/
 			=link_to "LOG OUT", '#'
 			%br/
+		.container
+			%form.profile{:action => 'edit', :method => 'get'}
+				%label.labels{:name => 'name'} NAME
+				%br/
+				%input.input-medium{:name => 'first_name', :value => @first_name, :type => "text"}/
+				%input.input-medium{:name => 'last_name', :value => @last_name, :type => "text"}/
+				%label.labels{:name => 'mobile_number'} MOBILE NUMBER
+				%br/
+				%input.input-xlarge{:name => 'mobile_number', :value => @mobile_number, :type => "text"}/
+				%label.labels{:name => 'birthday'} BIRTHDAY
+				%br/
+				%input.input-small{:name => 'month', :value => @month, :type => "text"}/
+				%input.input-small{:name => 'day', :value => @day, :type => "text"}/
+				%input.input-small{:name => 'year', :value => @year, :type => "text"}/
+				%br/
+				%label.labels{:name => 'gender'} GENDER
+				%label.labels{:name => 'religion'} RELIGION
+				%br/
+				%input.input-medium{:name => 'gender', :value => @gender, :type => "text"}/
+				%input.input-medium{:name => 'religion', :value => @religion, :type => "text"}/
+				%button.btn.btn-success{:type => "submit"} EDIT
