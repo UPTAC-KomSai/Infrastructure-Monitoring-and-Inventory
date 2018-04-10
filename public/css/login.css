@@ -12,7 +12,13 @@ body{
     height: 100px;
 	align-content: center;
 }
-
+.jumbotron.vertical-center{
+	position: absolute;
+    bottom: 90px;
+	left: 140px;
+	height: 80%;
+	width: 80%;
+}
 .labels{
 	text-align: center;
 	padding: 20px;

@@ -4,8 +4,9 @@ Feature: View Account Settings
    So that I can validate if all my account information are accurate
 
 Scenario: User view his account settings
-   Given I am on the Profile Information page
-   And I am an authenticated user
+   
+   Given I am an authenticated user
+   And I am on the Profile Information page
    Then I should see an Account button on Profile Information page
    When I click the Account button
    Then I should be on the Account Settings page

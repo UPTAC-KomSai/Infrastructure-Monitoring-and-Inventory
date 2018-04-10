@@ -6,7 +6,7 @@
 		= stylesheet_link_tag 'bootstrap'
 		= javascript_include_tag 'login'
 		= csrf_meta_tags
-		%link{:href => "/css/profile_information.css", :rel => "stylesheet"}/
+		%link{:href => "/css/account.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
 		%form{:name => 'accountbutton', :action => 'account_settings', :method => 'get'}
 			%button.btn.btn-primary{:name => 'account_settings', :type => 'submit'} Account
@@ -24,3 +24,33 @@
 			%br/
 			=link_to "LOG OUT", '#'
 			%br/
+			%a{:href => '/dashboard'} DASHBOARD
+			%a{:href => '#'} VIEW BUILDINGS
+			%a{:href => '#'} ADD BUILDINGS
+			%a{:href => '#'} VIEW HISTORICAL DATA
+			%a{:href => '/profile_information'} ACCOUNT
+			%a{:href => '#'} LOG OUT
+		
+		.top_buttons
+			%a{:href => '/profile_information'} PROFILE
+			|
+			%a{:href => '/account_settings'} ACCOUNT
+		.container#divcen
+			%form.profile{:action => 'edit/profile_information', :method => 'get'}
+				%label.labels{:name => 'name'} NAME
+				%input.input-xlarge{:name => 'first_name', :value => @first_name, :type => "text"}/
+				%input.input-xlarge{:name => 'last_name', :value => @last_name, :type => "text"}/
+				%label.labels{:name => 'mobile_number'} MOBILE NUMBER
+				%input.input-xlarge{:name => 'mobile_number', :value => @mobile_number, :type => "text"}/
+				%label.labels{:name => 'birthday'} BIRTHDAY
+				%input.input-medium{:name => 'month', :value => @month, :type => "text"}/
+				%input.input-medium{:name => 'day', :value => @day, :type => "text"}/
+				%input.input-medium{:name => 'year', :value => @year, :type => "text"}/
+				%label.labels{:name => 'gender'}
+					%span.gender_label GENDER
+					%span.religion_label RELIGION
+				%input.input-xlarge{:name => 'gender', :value => @gender, :type => "text"}/
+				%input.input-xlarge{:name => 'religion', :value => @religion, :type => "text"}/
+				%br/
+				%br/
+				%button.btn.btn-success{:type => "submit"} EDIT

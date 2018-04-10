@@ -21,5 +21,4 @@ class LoginController < ApplicationController
 			redirect_to controller: "account", action: "profile_information"
 		end
 	end
-	
 end

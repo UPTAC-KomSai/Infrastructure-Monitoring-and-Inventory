@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20180409151255) do
     t.text     "name"
     t.date     "date"
     t.text     "event"
+
+	ActiveRecord::Schema.define(version: 20180409135615) do
+  create_table "buildings", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date_built"
+    t.string   "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
