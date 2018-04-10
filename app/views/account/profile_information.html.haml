@@ -9,6 +9,7 @@
 		%link{:href => "/css/account.css", :rel => "stylesheet"}/
 	%body{:class => 'container'}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		%form{:name => 'accountbutton', :action => 'account_settings', :method => 'get'}
 			%button.btn.btn-primary{:type => 'submit'} Account
 		.row-xl-4
@@ -27,6 +28,24 @@
 
 =======
 		.sidenav
+=======
+		%form{:name => 'accountbutton', :action => 'account_settings', :method => 'get'}
+			%button.btn.btn-primary{:name => 'account_settings', :type => 'submit'} Account
+			
+		.row-xl-4
+			=link_to "DASHBOARD", '#'
+			%br/
+			=link_to "VIEW BUILDINGS", '#'
+			%br/
+			=link_to "ADD BUILDING", '#'
+			%br/
+			=link_to "VIEW HISTORICAL DATA", '#'
+			%br/
+			=link_to "ACCOUNT", '#'
+			%br/
+			=link_to "LOG OUT", '#'
+			%br/
+>>>>>>> 72fea446bb5a72649757f98a3f5df00728f4843d
 			%a{:href => '/dashboard'} DASHBOARD
 			%a{:href => '#'} VIEW BUILDINGS
 			%a{:href => '#'} ADD BUILDINGS

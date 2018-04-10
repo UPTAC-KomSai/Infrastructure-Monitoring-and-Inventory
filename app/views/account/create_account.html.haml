@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Create Account
+  %body{:style => "background-color:#171943"}
+    .jumbotron.vertical-center
+      %h1{:align => "center", :style => "color:#27D3DE; font-family:verdana; font-size:200%"} CREATE ACCOUNT
+      %form.row.text-center{:action => "redirect_account", :method => "post", :name => "create_account"}
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Name
+        %br/
+        %input{:name => "firstname", :placeholder => "First Name", :type => "text", :value => "#{@firstname}"}/
+        %input{:name => "lastname", :placeholder => "Last Name", :type => "text", :value => "#{@lastname}"}/
+        %br/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Email Address 
+        %br/
+        %input{:name => "email", :placeholder => "UP Mail", :type => "text", :value => "#{@email}"}/
+        %br/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Create Password
+        %br/
+        %input{:name => "passwd", :placeholder => "*****", :type => "password", :value => "#{@passwd}"}/
+        %br/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Mobile Number
+        %br/
+        %input{:name => "mobilenum", :placeholder => "", :type => "text", :value => "#{@mobilenum}"}/
+        %br/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Birthday
+        %br/
+        %input{:name => "birthday", :placeholder => "", :type => "date", :value => "#{@birthday}"}/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Religion
+        %br/
+        %input{:name => "religion", :placeholder => "", :type => "text", :value => "#{@religion}"}/
+        %br/
+        %label{:style => "color:white; font-family:verdana"} Gender
+        %br/
+        %input{:name => "gender", :placeholder => "", :type => "integer", :value => "#{@gender}"}/
+        %br/
+        %br/
+        %button.btn.btn-success{:type => "submit"} SAVE
