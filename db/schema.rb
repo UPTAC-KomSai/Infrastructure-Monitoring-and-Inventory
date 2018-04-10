@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407140804) do
+ActiveRecord::Schema.define(version: 20180409135615) do
+
+  create_table "buildings", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date_built"
+    t.string   "condition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.text     "email"
     t.text     "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "first_name"
+    t.text     "last_name"
+    t.text     "mobile_number"
+    t.date     "birthday"
+    t.text     "religion"
+    t.integer  "gender",        default: 0
   end
 
 end

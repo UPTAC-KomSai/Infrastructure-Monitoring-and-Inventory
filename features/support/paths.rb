@@ -22,6 +22,7 @@ module NavigationHelpers
 	when /^the Profile Information\s?page$/
 	  '/profile_information'
 	  
+<<<<<<< HEAD
 	when /^the Account Settings\s?page$/
 	  '/account_settings'
 	  
@@ -30,6 +31,14 @@ module NavigationHelpers
 	  
 	  
 	  
+=======
+	when /^the Account Setting\s?page$/
+	  '/account_setting'
+
+  when /^View Buildings\s?page$/
+    '/view_buildings'
+
+>>>>>>> 47312de040c169433e2e78e72f0dd0d8081c8626
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -1,1 +1,8 @@
-%h1 DASHBOARD
+%html
+  %head
+    %title Login
+    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "/css/login.css", :rel => "stylesheet"}/
+  %body{:class => 'container'}
+    %h1 DASHBOARD
+    = link_to "View Buildings", view_buildings_path

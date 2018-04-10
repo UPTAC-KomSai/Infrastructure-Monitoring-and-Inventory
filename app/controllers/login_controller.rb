@@ -21,6 +21,7 @@ class LoginController < ApplicationController
 			redirect_to controller: "account", action: "profile_information"
 		end
 	end
+<<<<<<< HEAD
 	
     def dashboard
 	end
@@ -28,4 +29,6 @@ class LoginController < ApplicationController
 	
 	
 
+=======
+>>>>>>> 47312de040c169433e2e78e72f0dd0d8081c8626
 end
