@@ -24,6 +24,12 @@ module NavigationHelpers
 	  
 	when /^the Account Settings\s?page$/
 	  '/account_settings'
+	  
+  	when /^the Building Options\s?page$/
+	  '/add_building'
+	  
+	  
+	  
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

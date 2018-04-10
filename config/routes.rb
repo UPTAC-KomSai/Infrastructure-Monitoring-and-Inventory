@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 	get '/dashboard' => 'login#dashboard'
 	get '/profile_information' => 'account#profile_information'
 	get '/account_settings' => 'account#account_settings'
-	
+	get '/add_building' => 'building_options#add_building'
+
 end
