@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
+	before_filter :confirm_logged_in, :only => [:logout]
 	attr_accessor :user, :dash
 	
 	def login
@@ -21,14 +22,10 @@ class LoginController < ApplicationController
 			redirect_to controller: "account", action: "profile_information"
 		end
 	end
-<<<<<<< HEAD
 	
-    def dashboard
+	def logout
+		reset_session
+		redirect_to '/'
 	end
-	
-	
-	
 
-=======
->>>>>>> 47312de040c169433e2e78e72f0dd0d8081c8626
 end

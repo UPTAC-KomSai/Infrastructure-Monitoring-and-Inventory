@@ -31,21 +31,19 @@
 			|
 			%a{:href => '/account_settings'} ACCOUNT
 		.container#divcen
-			%form.profile{:action => 'edit/profile_information', :method => 'get'}
+			%form.profile{:action => '/update/profile_information', :method => 'get'}
 				%label.labels{:name => 'name'} NAME
-				%input.input-xlarge{:name => 'first_name', :readonly => "readonly", :value => @first_name, :type => "text"}/
-				%input.input-xlarge{:name => 'last_name', :readonly => "readonly", :value => @last_name, :type => "text"}/
+				%input.input-xlarge{:name => 'first_name', :value => @first_name, :type => "text"}/
+				%input.input-xlarge{:name => 'last_name', :value => @last_name, :type => "text"}/
 				%label.labels{:name => 'mobile_number'} MOBILE NUMBER
 				%input.input-xlarge{:name => 'mobile_number', :value => @mobile_number, :type => "text"}/
 				%label.labels{:name => 'birthday'} BIRTHDAY
-				%input.input-medium{:name => 'month', :readonly => "readonly", :value => @month, :type => "text"}/
-				%input.input-medium{:name => 'day', :readonly => "readonly", :value => @day, :type => "text"}/
-				%input.input-medium{:name => 'year', :readonly => "readonly", :value => @year, :type => "text"}/
+				%input.input-medium{:name => 'birthday', :value => @birthday, :type => "date", :min => "1950-01-02"}/
 				%label.labels{:name => 'gender'}
 					%span.gender_label GENDER
 					%span.religion_label RELIGION
-				%input.input-xlarge{:name => 'gender', :readonly => "readonly", :value => @gender, :type => "text"}/
-				%input.input-xlarge{:name => 'religion', :readonly => "readonly", :value => @religion, :type => "text"}/
+				%input.input-xlarge{:name => 'gender', :value => @gender, :type => "text"}/
+				%input.input-xlarge{:name => 'religion', :value => @religion, :type => "text"}/
 				%br/
 				%br/
-				%button.btn.btn-success{:type => "submit"} Edit
+				%button.btn.btn-success{:type => "submit"} Update

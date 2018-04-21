@@ -21,6 +21,10 @@ a{
 	font-weight: bold;
 	font-size: 20px;
 }
+
+.pressed_link{
+	font-size: 30px;
+}
 .gender_label{
 	padding-right: 100px;
 }
@@ -60,6 +64,9 @@ a{
     display: block;
 }
 
+.pressed_sidelink{
+	font-size: 20px;
+}
 
 .sidenav a:hover {
     color: rgb(25,23,75);
