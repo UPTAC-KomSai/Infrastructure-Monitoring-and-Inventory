@@ -11,6 +11,7 @@
 		%script{:src => "/javascripts/logout.js", :type => "text/javascript"}
 		
 	%body{:class => 'container'}
+		
 		.sidenav
 			%a{:href => '/dashboard'} DASHBOARD
 			%a{:href => '/view_buildings'} VIEW BUILDINGS
@@ -27,9 +28,9 @@
 						%button.btn.btn-warning{:type => "submit"} Log out
 		
 		.top_buttons
-			%a.pressed_link{:href => '/profile_information'} PROFILE
+			%a.pressed_link{:href => '/profile_information'} Profile
 			|
-			%a{:href => '/account_settings'} ACCOUNT
+			%a{:href => '/account_settings'} Account
 		.container#divcen
 			%form.profile{:action => 'edit/profile_information', :method => 'get'}
 				%label.labels{:name => 'name'} NAME
@@ -48,4 +49,4 @@
 				%input.input-xlarge{:name => 'religion', :readonly => "readonly", :value => @religion, :type => "text"}/
 				%br/
 				%br/
-				%button.btn.btn-success{:type => "submit"} Edit
+				%button.btn.btn-success{:type => "submit", :name => 'Edit'} Edit

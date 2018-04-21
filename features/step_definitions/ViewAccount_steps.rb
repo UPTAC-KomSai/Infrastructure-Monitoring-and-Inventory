@@ -7,13 +7,6 @@ And /^(?:|I )am logged in as (.+) with email (.+)$/ do |name, email|
 	end
 
 end
-Then /^(?:|I )should see (.+) button$/ do |string|
-  page.should have_selector(:link_or_button, string)
-end
-
-When /^(?:|I )click the (.+) button$/ do |string|
-  click_on string
-end
 
 Then /^(?:|I )should see an (.+) button on Profile Information page$/ do |string|
   visit('/profile_information')

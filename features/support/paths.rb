@@ -22,23 +22,21 @@ module NavigationHelpers
 	when /^the Profile Information\s?page$/
 	  '/profile_information'
 	  
-<<<<<<< HEAD
-	when /^the Account Settings\s?page$/
-	  '/account_settings'
-	  
   	when /^the Building Options\s?page$/
 	  '/add_building'
 	  
-	  
-	  
-=======
-	when /^the Account Setting\s?page$/
-	  '/account_setting'
+	when /^the Account Settings\s?page$/
+	  '/account_settings'
 
-  when /^View Buildings\s?page$/
-    '/view_buildings'
+	when /^View Buildings\s?page$/
+		'/view_buildings'
+		
+	when /^the Edit Profile\s?page$/
+		'/edit/profile_information'
 
->>>>>>> 47312de040c169433e2e78e72f0dd0d8081c8626
+	when /^the Edit Account Settings\s?page$/
+		'/edit/account_settings'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
