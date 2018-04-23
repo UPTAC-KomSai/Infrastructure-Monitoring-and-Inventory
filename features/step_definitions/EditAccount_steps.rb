@@ -1,5 +1,6 @@
 
 When  /^(?:|I )fill up the field with necessary information$/ do
+	
 	 within('form.account_settings') do
 		fill_in 'passwd', with: 'taylor'
 		
