@@ -1,7 +1,7 @@
 
 Then /^(?:|I )should see an (.+) button on Dashboard page$/ do |string|
   visit('/dashboard')
-  page.should have_selector(:link_or_button, 'Account')
+  page.should have_selector(:link_or_button, string)
 end
 
 Then ("I should see my own profile information") do

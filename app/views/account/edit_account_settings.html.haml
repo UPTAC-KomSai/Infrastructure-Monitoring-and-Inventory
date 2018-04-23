@@ -27,19 +27,19 @@
 						%button.btn.btn-warning{:type => "submit"} Log out
 		
 		.top_buttons
-			%a{:href => '/profile_information'} Profile
+			%a{:href => '/profile_information'} PROFILE
 			|
-			%a.pressed_link{:href => '/account_settings'} Account
+			%a.pressed_link{:href => '/account_settings'} ACCOUNT
 		.container#divcen
-			%form.account_settings{:name => "account_settings", :action => "edit/account_settings", :method => "get"}
+			%form.account_settings{:name => "account_settings", :action => "/update/account_settings", :method => "patch"}
 				%label.labels{:name => 'emailadd'} E-MAIL ADDRESS
 				%br/
-				%input.input-xxlarge#emailAdd{:name => 'emailAdd',:readonly => "readonly", :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/
+				%input.input-xxlarge#emailAdd{:name => 'emailAdd', :readonly => "readonly", :placeholder => "example@up.edu.ph", :value => @email, :type => "text"}/
 				%label.labels{:name => 'passwd'} PASSWORD
 				%br/
-				%input.input-xxlarge#passwd{:name => 'passwd',:readonly => "readonly",:value => @passwd, :type => "password"}/
+				%input.input-xxlarge#passwd{:name => 'passwd',:value => @passwd, :type => "password"}/
 				%br/
 				%br/
-				%button.btn.btn-success{:type => "submit"} Change Password
+				%button.btn.btn-success{:type => "submit"} Save
   
 

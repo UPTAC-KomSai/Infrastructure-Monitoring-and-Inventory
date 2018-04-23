@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Building Options
+  %body{:style => "background-color:101231"}
+    %label{:align => "center", :style => "color:27D3DE; font-family:verdana; font-size:200%"} ADD BUILDING
+    %form{:action => "add_building", :method => "get", :name => "add_building"}
+      %br/
+      %label{:style => "color:black; font-family:verdana"} NAME OF THE BUILDING
+      %input{:name => "NAME OF THE BUILDING", :placeholder => "Name of building", :type => "text"}/
+      %br/
+      %br/
+      %label{:style => "color:black; font-family:verdana"} DATE BUILT
+      %input{:name => "month", :placeholder => "Month", :type => "text"}/
+      %input{:name => "day", :placeholder => "Day", :type => "text"}/
+      %input{:name => "year", :placeholder => "Year", :type => "text"}/
+      %br/
+      %br/
+      %label{:style => "color:black; font-family:verdana"} BUILDING INFORMATION
+      %textarea{:cols => "62", :name => "information", :placeholder => "Add information", :rows => "10", :type => "text"}
+    %button{:align => "center", :type => "submit"} ADD

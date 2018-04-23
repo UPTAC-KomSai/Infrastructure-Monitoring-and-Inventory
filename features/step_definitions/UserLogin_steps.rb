@@ -4,7 +4,7 @@ require 'capybara/cucumber'
 When /^(?:|I )login with email:(.+) password:(.+)$/ do |email, passwd|
 	user = User.create!(:email => 'taylor@up.edu.ph', :password => 'swift', :first_name => 'Taylor', :last_name => 'Swift', :birthday => '04/11/2018', :religion => 'religion', :gender => 1, :mobile_number => '09123456789')
 	
-	within('form.row.text-center') do
+	within('form.row.text-center#rowcen') do
 		fill_in 'emailadd', with: email
 		fill_in 'passwd', with: passwd
 		expect(find_field('emailadd').value).to eq email

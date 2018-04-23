@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
 	validates :password, presence: true
 	validates :first_name, presence: true
 	validates :last_name, presence: true
-	enum gender: [:male, :female]
+	enum gender: [:male, :female, :LGBTQ]
 end

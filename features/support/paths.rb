@@ -22,11 +22,20 @@ module NavigationHelpers
 	when /^the Profile Information\s?page$/
 	  '/profile_information'
 	  
-	when /^the Account Setting\s?page$/
-	  '/account_setting'
+  	when /^the Building Options\s?page$/
+	  '/add_building'
+	  
+	when /^the Account Settings\s?page$/
+	  '/account_settings'
 
 	when /^View Buildings\s?page$/
-    '/view_buildings'
+		'/view_buildings'
+		
+	when /^the Edit Profile\s?page$/
+		'/edit/profile_information'
+
+	when /^the Edit Account Settings\s?page$/
+		'/edit/account_settings'
 
 	when /^the Create Account\s?page$/
 	'/create_account'
