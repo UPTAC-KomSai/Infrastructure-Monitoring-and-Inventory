@@ -25,9 +25,12 @@ module NavigationHelpers
 	when /^the Account Setting\s?page$/
 	  '/account_setting'
 
-  when /^View Buildings\s?page$/
+	when /^View Buildings\s?page$/
     '/view_buildings'
 
+	when /^the Create Account\s?page$/
+	'/create_account'
+	
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

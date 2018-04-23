@@ -1,3 +1,5 @@
+require 'capybara/cucumber'
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -16,11 +18,10 @@ Given /^(?:|I )am an authenticated user$/ do
 	expect(page).to have_content('Log in successful.');
 end
 
-When /^(?:|I )click the (.+) button$/ do |string|
-  click_button string
+Then /^(?:|I )should see the (.+) button$/ do |string|
+  page.should have_selector(:link_or_button, string)
 end
 
-
-Then /^(?:|I )should be on (.+)$/ do |page_name|
-  visit path_to(page_name)
+When /^(?:|I )click the (.+) button$/ do |string|
+  click_button string
 end

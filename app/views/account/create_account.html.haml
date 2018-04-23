@@ -3,10 +3,11 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Create Account
+    %link{:href => "/css/account.css", :rel => "stylesheet"}/
   %body{:style => "background-color:#171943"}
     .jumbotron.vertical-center
       %h1{:align => "center", :style => "color:#27D3DE; font-family:verdana; font-size:200%"} CREATE ACCOUNT
-      %form.row.text-center{:action => "redirect_account", :method => "post", :name => "create_account"}
+      %form.row.text-center{:align =>"center", :action => "redirect_account", :method => "post", :name => "create_account"}
         %br/
         %label{:style => "color:white; font-family:verdana"} Name
         %br/
@@ -33,13 +34,15 @@
         %br/
         %input{:name => "birthday", :placeholder => "", :type => "date", :value => "#{@birthday}"}/
         %br/
+        %br/
         %label{:style => "color:white; font-family:verdana"} Religion
         %br/
         %input{:name => "religion", :placeholder => "", :type => "text", :value => "#{@religion}"}/
+        %br/
         %br/
         %label{:style => "color:white; font-family:verdana"} Gender
         %br/
         %input{:name => "gender", :placeholder => "", :type => "integer", :value => "#{@gender}"}/
         %br/
         %br/
-        %button.btn.btn-success{:type => "submit"} SAVE
+        %button.btn.btn-success{:type => "submit"} Save
