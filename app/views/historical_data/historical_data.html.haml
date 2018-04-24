@@ -1,0 +1,50 @@
+!!! 5
+%html
+	%head
+		%title Login
+		= stylesheet_link_tag 'login'
+		= stylesheet_link_tag 'bootstrap'
+		= javascript_include_tag 'login'
+		= csrf_meta_tags
+		%link{:href => '/css/view_buildings.css', :rel => "stylesheet"}/
+		%link{:href => "/css/logout.css", :rel => "stylesheet"}/
+		%link{:href => "/css/account.css", :rel => "stylesheet"}/
+		
+	%body{:class => 'container', :id => 'boo'}
+		.sidenav
+			%a{:href => '/dashboard'} DASHBOARD
+			%a{:href => '/view_buildings'} VIEW BUILDINGS
+			%a{:href => '#'} ADD BUILDINGS
+			%a{:href => '#'} VIEW HISTORICAL DATA
+			%a.pressed_sidelink{:href => '/profile_information'} ACCOUNT
+			%a{:href => '/logout'} LOG OUT
+			
+		%h1 VIEW HISTORICAL DATA
+		
+		%br
+		%br
+		
+		%form.row.text-center#searchie{:name => "search_form", :action => "", :method => "get"}
+			%input.input-large{:name => 'search_field', :type => 'search'}/
+			%button.btn.btn-success{:type => "submit"} Search
+		
+		%div#div
+			%table
+				%thead
+					%tr
+						%th.top{:style => 'width: 450px;'}= link_to 'NAME OF BUILDING', historical_data_path(:sorter => 'name')
+						%th{:style => 'padding: 4px;'}
+						%th.top{:style => 'width: 200px;'}= link_to 'DATE BUILT', historical_data_path(:sorter => 'date')
+						%th{:style => 'padding: 4px;'}
+						%th.top{:style => 'color: rgb(0,0,255); width: 19 0px;'} EVENT
+						
+				%tbody
+					-count = 0
+					- @historical_data.each do |hist_data|
+						%tr
+							%td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.name
+							%td
+							%td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.date
+							%td
+							%td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.event
+							-count += 1

@@ -6,7 +6,7 @@ Feature: View All Buildings
 Scenario: User views the list of all buildings
    Given I am an authenticated user
    And I am on the Dashboard page
-   Then I should see the VIEW BUILDINGS button
+   Then I expect to see the VIEW BUILDINGS button
    When I click the VIEW BUILDINGS button
    Then I should be on View Buildings page
    And I should see a list containing all the information of all the buildings

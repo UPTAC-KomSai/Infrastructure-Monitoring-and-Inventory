@@ -15,14 +15,13 @@
 			%a{:href => '/dashboard'} DASHBOARD
 			%a{:href => '/view_buildings'} VIEW BUILDINGS
 			%a{:href => '#'} ADD BUILDINGS
-			%a{:href => '#'} VIEW HISTORICAL DATA
+			%a{:href => '/historical_data'} VIEW HISTORICAL DATA
 			%a.pressed_sidelink{:href => '/profile_information'} ACCOUNT
-			%a{:href => '/logout'} LOG OUT
-		
+
 		.top_buttons
-			%a.pressed_link{:href => '/profile_information'} PROFILE
+			%a.pressed_link{:href => '/profile_information'} Profile
 			|
-			%a{:href => '/account_settings'} ACCOUNT
+			%a{:href => '/account_settings'} Account
 		.container#divcen
 			%form.profile{:action => '/update/profile_information', :method => 'get'}
 				%label.labels{:name => 'name'} NAME

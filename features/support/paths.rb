@@ -37,6 +37,12 @@ module NavigationHelpers
 	when /^the Edit Account Settings\s?page$/
 		'/edit/account_settings'
 
+	when /^the Create Account\s?page$/
+		'/create_account'
+	
+	when /^the View Historical Data\s?page$/
+		'/historical_data'
+	
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 	get '/edit/profile_information' => 'account#edit_profile_information'
 	get '/update/account_settings' => 'account#update_account_settings'
 	get '/update/profile_information' => 'account#update_profile_information'
+	get '/historical_data' => 'historical_data#historical_data'
 end

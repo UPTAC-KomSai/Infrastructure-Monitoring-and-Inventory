@@ -1,4 +1,3 @@
-
 And /^(?:|I )am logged in as (.+) with email (.+)$/ do |name, email|
 	emailAdd= email
 	visit path_to('/profile_information')

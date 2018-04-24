@@ -1,3 +1,5 @@
+require 'capybara/cucumber'
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -10,7 +12,6 @@ Given /^(?:|I )am an authenticated user$/ do
 		fill_in 'passwd', with: 'swift'
 		expect(find_field('emailadd').value).to eq 'taylor@up.edu.ph'
 		expect(find_field('passwd').value).to eq 'swift'
-		
 	end
 	click_button 'Log in'
 	expect(page).to have_content('Log in successful.');
@@ -20,15 +21,23 @@ When /^(?:|I )click the (.+) button$/ do |string|
   click_link_or_button string
 end
 
-
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
 Then  /^(?:|I )should see the (.+) button$/ do |string|
+<<<<<<< HEAD
 	 page.should have_selector(:link_or_button, string)
 end
 
 Then  /^(?:|I )should see (.+)$/ do |string|
 	 page.should have_content(string)
 end
+=======
+	page.should have_selector(:link_or_button, string)
+end
+
+When("I fill in the {string} with {string}") do |string, string2|
+  fill_in(string, :with => string2)
+end
+>>>>>>> dd60e1f2bc0cadfe7839ba41686025ef3125fc43
