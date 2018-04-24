@@ -1,0 +1,79 @@
+:css
+  #boo {
+    background-color: rgb(25,27,53);
+    color: rgb(255, 255, 255);
+  }
+
+  .inside {
+    font-size: 18px;
+    border: 3px solid white;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding: 15px 0px;
+  }
+
+  .top {
+    border: 3px solid white;
+    border-bottom: 0px;
+    font-size: 22px;
+    padding: 15px 0px;
+  }
+
+  .bottom {
+    border: 3px solid white;
+    border-top: 0px;
+    font-size: 18px;
+    padding: 15px 0px;
+  }
+
+  #div {
+    border: 3px solid rgb(0, 55, 105);
+    text-align: center;
+    width: 800px;
+    padding: 10px 6px 10px 6px;
+  }
+
+%html
+  %head
+    %title Login
+    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+	
+  %body{:class => 'container', :id => 'boo'}
+    .sidenav
+      %a{:href => '/dashboard'} DASHBOARD
+      %a{:href => '/view_buildings'} VIEW BUILDINGS
+      %a{:href => '#'} ADD BUILDINGS
+      %a{:href => '/historical_data'} VIEW HISTORICAL DATA
+      %a.pressed_sidelink{:href => '/profile_information'} ACCOUNT
+      %a.trigger_popup_fricc LOG OUT
+      .hover_bkgr_fricc
+        %span.helper
+        %div
+          .popupCloseButton X
+          %p Are you sure you want to log out?
+          %form.logout{:action => "logout", :method => "get"}
+          %button.btn.btn-warning{:type => "submit"} Log out	
+    %h1 VIEW HISTORICAL
+
+    %br
+    %br
+
+    %div#div
+      %table 
+        %thead
+          %tr
+            %th.top{:style => 'width: 450px;'}= link_to 'NAME OF BUILDING', historical_data_path(:sorter => 'name')
+            %th{:style => 'padding: 4px;'}
+            %th.top{:style => 'width: 150px;'}= link_to 'DATE', historical_data_path(:sorter => 'date')
+            %th{:style => 'padding: 4px;'}
+            %th.top{:style => "color: rgb(0, 0, 255); width: 19 0px;"} EVENT
+        %tbody
+          -count = 0
+          - @historical_data.each do |hist_data|
+            %tr
+              %td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.name
+              %td
+              %td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.date
+              %td
+              %td.inside{:class => ('bottom' if count == @historical_data.length-1)}= hist_data.event
+              -count += 1

@@ -1,4 +1,4 @@
 
-Then ("I should see a list containing the historical data of all buildings") do
+Then ("I should see a list containing the historical information of all the buildings") do
   
 end

@@ -3,10 +3,6 @@ When("I click {string} button") do |string|
  click_link 'ADD BUILDING'
 end
 
-When("I fill in the {string} with {string}") do |string, string2|
-  fill_in(string, :with => string2)
-end
-
 When("I fill the {string} with {string} {string} {string}") do |string, string2, string3, string4|
   
   fill_in("month", :with => string2)
