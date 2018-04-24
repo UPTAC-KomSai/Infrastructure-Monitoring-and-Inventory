@@ -28,3 +28,7 @@ end
 Then  /^(?:|I )should see the (.+) button$/ do |string|
 	 page.should have_selector(:link_or_button, string)
 end
+
+Then  /^(?:|I )should see (.+)$/ do |string|
+	 page.should have_content(string)
+end
