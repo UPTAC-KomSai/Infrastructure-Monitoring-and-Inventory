@@ -8,6 +8,8 @@ class ViewBuildingsController < ApplicationController
 			elsif params[:sorter] == 'date'
 				@buildings = Building.order(date_built: :asc)
 			end
+		elsif params[:search_field].present?
+			@buildings = Building.where(name: params[:search_field])
 		else
 			@buildings = Building.all
 		end
