@@ -2,9 +2,9 @@
 %html
 	%head
 		%title Profile Information
-		/ = stylesheet_link_tag 'login'
-		/ = stylesheet_link_tag 'bootstrap'
-		/ = javascript_include_tag 'login'
+		= stylesheet_link_tag 'login'
+		= stylesheet_link_tag 'bootstrap'
+		= javascript_include_tag 'login'
 		= csrf_meta_tags
 		%link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
 		%link{:href => "/css/account.css", :rel => "stylesheet"}/
@@ -12,7 +12,7 @@
 	%body{:class => 'container'}
 		.sidenav
 			%a{:href => '/dashboard'} DASHBOARD
-			%a{:href => '#'} VIEW BUILDINGS
+			%a{:href => '/view_buildings'} VIEW BUILDINGS
 			%a{:href => '#'} ADD BUILDINGS
 			%a{:href => '#'} VIEW HISTORICAL DATA
 			%a{:href => '/profile_information'} ACCOUNT

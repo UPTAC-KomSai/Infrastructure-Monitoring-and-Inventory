@@ -4,9 +4,9 @@ Feature: View All Buildings
    So that I can see what are buildings currently built in the institution
 
 Scenario: User views the list of all buildings
-
-   Given I am on the Dashboard page
-   Then I expect to see the View Buildings button
-   When I click the View Buildings button
-   Then I should be on the View Buildings page
+   Given I am an authenticated user
+   And I am on the Dashboard page
+   Then I expect to see the VIEW BUILDINGS button
+   When I click the VIEW BUILDINGS button
+   Then I should be on View Buildings page
    And I should see a list containing all the information of all the buildings

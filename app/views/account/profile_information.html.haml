@@ -2,9 +2,9 @@
 %html
 	%head
 		%title Profile Information
-		/ = stylesheet_link_tag 'login'
-		/ = stylesheet_link_tag 'bootstrap'
-		/ = javascript_include_tag 'login'
+		= stylesheet_link_tag 'login'
+		= stylesheet_link_tag 'bootstrap'
+		= javascript_include_tag 'login'
 		= csrf_meta_tags
 		%link{:href => "/css/account.css", :rel => "stylesheet"}/
 		%link{:href => "/css/logout.css", :rel => "stylesheet"}/
@@ -18,14 +18,8 @@
 			%a{:href => '#'} ADD BUILDINGS
 			%a{:href => '#'} VIEW HISTORICAL DATA
 			%a.pressed_sidelink{:href => '/profile_information'} ACCOUNT
-			%a.trigger_popup_fricc LOG OUT
-			.hover_bkgr_fricc
-				%span.helper
-				%div
-					.popupCloseButton X
-					%p Are you sure you want to log out?
-					%form.logout{:action => "logout", :method => "get"}
-						%button.btn.btn-warning{:type => "submit"} Log out
+			%a.trigger_popup_fricc{:href => '/logout'} LOG OUT
+			
 		
 		.top_buttons
 			%a.pressed_link{:href => '/profile_information'} Profile
