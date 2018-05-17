@@ -172,6 +172,7 @@
                           %th NAME OF BUILDING
                           %th DATE BUILT
                           %th CONDITION
+                          %th OPTIONS
                       %tbody
                         / %tr
                         /   %td CS LABORATORY
@@ -190,6 +191,9 @@
                             %td= building.name
                             %td= building.date_built
                             %td= building.condition
+                            %td
+                              %a{:href => '#'} Delete
+                              %a{:href => '#'} Edit
                     %button{:onclick => "myFunction()"} Try it
                 / Column
               / End PAge Content
