@@ -26,18 +26,9 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
 end
 
 Then  /^(?:|I )should see the (.+) button$/ do |string|
-<<<<<<< HEAD
-	 page.should have_selector(:link_or_button, string)
-end
-
-Then  /^(?:|I )should see (.+)$/ do |string|
-	 page.should have_content(string)
-end
-=======
 	page.should have_selector(:link_or_button, string)
 end
 
 When("I fill in the {string} with {string}") do |string, string2|
   fill_in(string, :with => string2)
 end
->>>>>>> dd60e1f2bc0cadfe7839ba41686025ef3125fc43
