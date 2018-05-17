@@ -118,12 +118,15 @@
                 %a{:href => "/view_buildings"}
                   %i.fa.fa-table
                   %span.hide-menu View Buildings
+              %li
                 %a{:href => "/add_building"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Buildings
+              %li
                 %a{:href => "/add_historical_data"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Historical Data
+              %li
                 %a{:href => "/historical_data"}
                   %i.fa.fa-book
                   %span.hide-menu View Historical Data
@@ -176,6 +179,7 @@
                           %td= building.name
                           %td= building.date
                           %td= building.event
+						  
               / Column
             / End PAge Content
           / End Container fluid
