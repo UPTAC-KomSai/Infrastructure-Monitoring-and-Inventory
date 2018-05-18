@@ -133,48 +133,24 @@
         / Bread crumb
         .row.page-titles
           .col-md-5.align-self-center
-            %h3.text-primary View Buildings
+            %h3.text-primary= @bd
           .col-md-7.align-self-center
             %ol.breadcrumb
               %li.breadcrumb-item
                 %a{:href => "javascript:void(0)"} Home
               %li.breadcrumb-item.active View Buildings
+              %li.breadcrumb-item.active= @bd
         / End Bread crumb
         / Container fluid
         .container-fluid
           / Start Page Content
           .row
-            / Column
             .col-lg-12
               .card
-                %h4.card-title Data Export
-                %h6.card-subtitle Export data to Copy, CSV, Excel, PDF &amp; Print
-                .table-responsive.m-t-40
-                  %table#example23.display.nowrap.table.table-hover.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
-                    %thead
-                      %tr
-                        %th NAME OF BUILDING
-                        %th DATE BUILT
-                        %th CONDITION
-                    %tbody
-                      / %tr
-                      /   %td CS LABORATORY
-                      /   %td April 28, 2018
-                      /   %td NOT OK
-                      / %tr
-                      /   %td CS LECTURE ROOM
-                      /   %td Febuary 31, 2018
-                      /   %td VERY OK
-                      / %tr
-                      /   %td UP BOTANICAL
-                      /   %td March 21, 2018
-                      /   %td NEEDS CLEANING
-                      - @buildings.each do |building|
-                        %tr
-                          %td= link_to "#{building.name}", show_building_detail_path(:id => building.name)
-                          %td= building.date_built
-                          %td= building.condition
-              / Column
+                %h4.card-title.text-center Information
+                %br/
+
+                %a.text-right.text-info{:href => "/view_buildings"} Back
             / End PAge Content
           / End Container fluid
           / footer

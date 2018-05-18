@@ -15,7 +15,9 @@ class ViewBuildingsController < ApplicationController
 		end
 	end
 
-    def view_building_detail
-    	@building = params[:building]
+    def show_building_detail
+    	b = params[:id]
+    	@bd = b
+    	@building = Building.where(name: b)
     end
 end
