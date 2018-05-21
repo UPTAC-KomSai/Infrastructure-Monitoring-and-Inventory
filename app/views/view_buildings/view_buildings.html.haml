@@ -118,7 +118,7 @@
                 %a{:href => "/view_buildings"}
                   %i.fa.fa-table
                   %span.hide-menu View Buildings
-                %a{:href => "#"}
+                %a{:href => "/add_building"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Buildings
                 %a{:href => "/add_historical_data"}
@@ -160,18 +160,13 @@
                         %th DATE BUILT
                         %th CONDITION
                     %tbody
-                      %tr
-                        %td CS LABORATORY
-                        %td April 28, 2018
-                        %td NOT OK
-                      %tr
-                        %td CS LECTURE ROOM
-                        %td Febuary 31, 2018
-                        %td VERY OK
-                      %tr
-                        %td UP BOTANICAL
-                        %td March 21, 2018
-                        %td NEEDS CLEANING
+                      -count = 1
+                      - @buildings.each do |building|
+                        %tr 
+                          %td.inside{:class => ('bottom' if count == @buildings.length-1)}= building.name
+                          %td.inside{:class => ('bottom' if count == @buildings.length-1)}= building.date_built
+                          %td.inside{:class => ('bottom' if count == @buildings.length-1)}= building.condition
+                          -count += 1
               / Column
             / End PAge Content
           / End Container fluid
