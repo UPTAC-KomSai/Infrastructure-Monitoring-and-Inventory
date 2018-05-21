@@ -18,6 +18,6 @@ class ViewBuildingsController < ApplicationController
     def show_building_detail
     	b = params[:id]
     	@bd = b
-    	@building = Building.where(name: b)
+    	@building_datum = BuildingDatum.where(name: b)
     end
 end
