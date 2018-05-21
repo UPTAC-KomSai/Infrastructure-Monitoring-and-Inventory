@@ -119,14 +119,14 @@
                   %i.fa.fa-table
                   %span.hide-menu View Buildings
               %li
-                %a{:href => "add_building"}
+                %a{:href => "/add_building"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Buildings
               %li
                 %a{:href => "/add_historical_data"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Historical Data
-              %li				  
+              %li
                 %a{:href => "/historical_data"}
                   %i.fa.fa-book
                   %span.hide-menu View Historical Data
@@ -143,7 +143,7 @@
             %ol.breadcrumb
               %li.breadcrumb-item
                 %a{:href => "javascript:void(0)"} Home
-              %li.breadcrumb-item.active Building Options
+              %li.breadcrumb-item.active Add Historical Data
         / End Bread crumb
         / Container fluid
         .container-fluid
@@ -192,8 +192,8 @@
                             %td= building.date
                             %td= building.event
                             %td
-                              %button.btn.btn-primary{:type => "submit"} Delete
-                              %button.btn.btn-primary{:type => "submit"} Edit
+                              %button.btn.btn-secondary{:type => "submit"} Delete
+                              %button.btn.btn-secondary{:type => "submit"} Edit
                 / Column
               / End PAge Content
             / End Container fluid
@@ -254,17 +254,6 @@
                         cursorborderradius:0
                         });  // a world f
                   });
-          		
-          		function myFunction() {
-          			var table = document.getElementById("myTable");
-          			var row = table.insertRow(1);
-          			var cell1 = row.insertCell(0);
-          			var cell2 = row.insertCell(1);
-          			var cell3 = row.insertCell(2);
-          			cell1.innerHTML = "#{@buildingname}";
-          			cell2.innerHTML = "NEW CELL2";
-          			cell3.innerHTML = "NEW CELL3";
-          		}
         %script{:src => "js/lib/jquery/jquery.min.js"}
         / Bootstrap tether Core JavaScript
         %script{:src => "js/lib/bootstrap/js/popper.min.js"}

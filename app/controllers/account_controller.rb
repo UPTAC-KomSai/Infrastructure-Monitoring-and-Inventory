@@ -4,8 +4,6 @@ class AccountController < ApplicationController
 	
 	def profile_information
 		@current_user = User.find_by(email: session[:current_user_email])
-		@passwd = @current_user.password
-		@email = session[:current_user_email]
 		@first_name = @current_user.first_name
 		@last_name = @current_user.last_name	
 		@mobile_number = @current_user.mobile_number
@@ -25,9 +23,6 @@ class AccountController < ApplicationController
 		@current_user = User.find_by(email: session[:current_user_email])
 		@passwd = @current_user.password
 		@email = session[:current_user_email]
-		@first_name = @current_user.first_name
-		@last_name = @current_user.last_name	
-		@mobile_number = @current_user.mobile_number
 	end
 
 	def create_account
@@ -60,15 +55,9 @@ class AccountController < ApplicationController
 	def edit_account_settings
 		@passwd = session[:current_user_password]
 		@email = session[:current_user_email]
-		@current_user = User.find_by(email: session[:current_user_email])
-		@first_name = @current_user.first_name
-		@last_name = @current_user.last_name
-		@mobile_number = @current_user.mobile_number
 	end
 	
 	def edit_profile_information
-		@passwd = session[:current_user_password]
-		@email = session[:current_user_email]
 		@current_user = User.find_by(email: session[:current_user_email])
 		@first_name = @current_user.first_name
 		@last_name = @current_user.last_name
