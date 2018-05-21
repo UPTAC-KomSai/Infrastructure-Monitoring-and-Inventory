@@ -7,7 +7,7 @@
     / Tell the browser to be responsive to screen width
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
-  %body.fix-header.fix-sidebar
+  %body
     %p
       zoomIn
       %meta{:content => "", :name => "author"}/
@@ -119,14 +119,14 @@
                   %i.fa.fa-table
                   %span.hide-menu View Buildings
               %li
-                %a{:href => "/add_building"}
+                %a{:href => "add_building"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Buildings
               %li
                 %a{:href => "/add_historical_data"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Historical Data
-              %li
+              %li				  
                 %a{:href => "/historical_data"}
                   %i.fa.fa-book
                   %span.hide-menu View Historical Data
@@ -163,23 +163,18 @@
                         %th DATE BUILT
                         %th CONDITION
                     %tbody
-                      / %tr
-                      /   %td CS LABORATORY
-                      /   %td April 28, 2018
-                      /   %td NOT OK
-                      / %tr
-                      /   %td CS LECTURE ROOM
-                      /   %td Febuary 31, 2018
-                      /   %td VERY OK
-                      / %tr
-                      /   %td UP BOTANICAL
-                      /   %td March 21, 2018
-                      /   %td NEEDS CLEANING
-                      - @buildings.each do |building|
-                        %tr
-                          %td= building.name
-                          %td= building.date_built
-                          %td= building.condition
+                      %tr
+                        %td CS LABORATORY
+                        %td April 28, 2018
+                        %td NOT OK
+                      %tr
+                        %td CS LECTURE ROOM
+                        %td Febuary 31, 2018
+                        %td VERY OK
+                      %tr
+                        %td UP BOTANICAL
+                        %td March 21, 2018
+                        %td NEEDS CLEANING
               / Column
             / End PAge Content
           / End Container fluid

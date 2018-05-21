@@ -7,7 +7,7 @@
     / Tell the browser to be responsive to screen width
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
-  %body.fix-header.fix-sidebar
+  %body
     %p
       zoomIn
       %meta{:content => "", :name => "author"}/
@@ -119,12 +119,15 @@
                 %a{:href => "/view_buildings"}
                   %i.fa.fa-table
                   %span.hide-menu View Buildings
-                %a{:href => "/add_building"}
+              %li
+                %a{:href => "add_building"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Buildings
+              %li
                 %a{:href => "/add_historical_data"}
                   %i.fa.fa-wpforms
                   %span.hide-menu Add Historical Data
+              %li				  
                 %a{:href => "/historical_data"}
                   %i.fa.fa-book
                   %span.hide-menu View Historical Data
@@ -173,7 +176,7 @@
                 .tab-content
                   #home.tab-pane.active{:role => "tabpanel"}
                     .card-body
-                      %form.form-horizontal.form-material{:action => "edit/profile_information", :method => "get"}
+                      %form.form-horizontal.form-material{:action => "/edit_profile_information", :method => "get"}
                         .form-group
                           %br/
                           %label.col-md-12 First Name
@@ -188,24 +191,12 @@
                           .col-md-12
                             %input.form-control.form-control-line{:name => "mobile_number", :readonly => "readonly", :type => "text", :value => "#{@mobile_number}"}/
                         .form-group
-                          %label.col-md-12 Birthdate
-                          .col-md-12
-                            %input.form-control.form-control-line{:value => @birthday, :type => "date", :readonly => "readonly"}/
-                        .form-group
-                          %label.col-md-12 Gender
-                          .col-md-12
-                            %input.form-control.form-control-line{:name => "gender", :readonly => "readonly", :type => "text", :value => "#{@gender}"}/
-                        .form-group
-                          %label.col-md-12 Religion
-                          .col-md-12
-                            %input.form-control.form-control-line{:name => "religion", :readonly => "readonly", :type => "text", :value => "#{@religion}"}/
-                        .form-group
                           .col-sm-12
                             %button.btn.btn-success Update Profile
                   / second tab
                   #profile.tab-pane{:role => "tabpanel"}
                     .card-body
-                      %form.account_settings{:action => "edit/account_settings", :method => "get", :name => "account_settings"}
+                      %form.account_settings{:action => "edit_account_settings", :method => "get", :name => "account_settings"}
                         #divcen.form-group
                           %label.col-md-12{:name => "emailadd"} Email
                           .col-md-12
@@ -216,7 +207,7 @@
                             %input#passwd.form-control.form-control-line{:name => "passwd", :readonly => "readonly", :type => "password", :value => "#{@passwd}"}/
                         .form-group
                           .col-sm-12
-                            %button.btn.btn-success{:type => "submit"} Update Profile
+                            %button.btn.btn-success{:type => "submit"} Update Account
             / Column
           / End PAge Content
         / End Container fluid

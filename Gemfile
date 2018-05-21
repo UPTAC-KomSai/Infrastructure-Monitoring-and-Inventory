@@ -1,11 +1,18 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '~> 0.15'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -66,3 +73,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Integrate Bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'rails_12factor'
