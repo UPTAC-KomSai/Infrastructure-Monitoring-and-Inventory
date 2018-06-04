@@ -154,9 +154,11 @@
                 %h4.card-title.text-center INFORMATION
                 %br/
                 %ul
+                - gusali_name = ""
                 - if !(@building_datum.nil?)
                   - @building_datum.each do |b_dat|
                     %li
+                      - gusali_name = b_dat.name
                       = link_to image_tag(b_dat.image.url(:med)), b_dat.image.url
                       %br/
                       %span{:style => "padding-left: 25px;"} Carpentry/Structure
@@ -256,7 +258,7 @@
                 - if @building_datum.empty?
                   %a.text-right.text-info{:href => '/new_building_detail'} Add
                 - else
-                  %a.text-right.text-info{:href => "/view_buildings"} Edit
+                  %a.text-right.text-info{:href => edit_building_detail_path(id: gusali_name)} Edit
                 %a.text-right.text-info{:href => "/view_buildings"} Back
             / End PAge Content
           / End Container fluid

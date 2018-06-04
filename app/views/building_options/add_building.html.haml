@@ -153,7 +153,7 @@
                   %form{:action => "add_building", :method => "get", :name => "addbuilding"}
                     .form-group
                       %label BUILDING NAME
-                      %input.form-control{:value => "", :name => "building[name]", :placeholder => "Name of Building", :type => "text"}/
+                      %input.form-control{:value => "", :name => "building[name]", :placeholder => "#{@pangalan}", :type => "text"}/
                     .form-group
                       %label DATE BUILT
                       %input.form-control{:value => "",:name => "building[date_built]", :placeholder => "Date Built", :type => "date"}/
@@ -171,26 +171,14 @@
                           %th CONDITION
                           %th OPTION
                       %tbody
-                        / %tr
-                        /   %td CS LABORATORY
-                        /   %td April 28, 2018
-                        /   %td NOT OK
-                        / %tr
-                        /   %td CS LECTURE ROOM
-                        /   %td Febuary 31, 2018
-                        /   %td VERY OK
-                        / %tr
-                        /   %td UP BOTANICAL
-                        /   %td March 21, 2018
-                        /   %td NEEDS CLEANING
                         - @buildings.each do |building|
                           %tr
                             %td= building.name
                             %td= building.date_built
                             %td= building.condition
                             %td
-                              %a{:href => '#'} Delete
-                              %a{:href => '#'} Edit
+                              %a{:href => delete_building_path(id: building.name)} Delete
+                              %a{:href => edit_building_path(id: building.name)} Edit
                     %button{:onclick => "myFunction()"} Try it
                 / Column
               / End PAge Content
