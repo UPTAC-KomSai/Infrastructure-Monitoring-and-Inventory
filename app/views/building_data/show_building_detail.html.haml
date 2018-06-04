@@ -154,8 +154,11 @@
                 %h4.card-title.text-center INFORMATION
                 %br/
                 %ul
+                - if !(@building_datum.nil?)
                   - @building_datum.each do |b_dat|
                     %li
+                      = link_to image_tag(b_dat.image.url(:med)), b_dat.image.url
+                      %br/
                       %span{:style => "padding-left: 25px;"} Carpentry/Structure
                       %ul
                         %li
@@ -172,7 +175,7 @@
                           %span= b_dat.door
                           %ul
                             %li
-                              %span{:style => "padding-left: 75px;"} Door Knobs: 
+                              %span{:style => "padding-left: 50px;"} Door Knobs: 
                               %span= b_dat.door_knobs
                         %li
                           %span{:style => "padding-left: 50px;"} Painting: 
@@ -250,6 +253,10 @@
                           %span{:style => "padding-left: 50px;"} Comfort Rooms: 
                           %span= b_dat.comfort_room
                 %br/
+                - if @building_datum.empty?
+                  %a.text-right.text-info{:href => '/new_building_detail'} Add
+                - else
+                  %a.text-right.text-info{:href => "/view_buildings"} Edit
                 %a.text-right.text-info{:href => "/view_buildings"} Back
             / End PAge Content
           / End Container fluid

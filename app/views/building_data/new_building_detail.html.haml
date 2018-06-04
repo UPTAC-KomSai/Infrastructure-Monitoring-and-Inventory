@@ -135,7 +135,7 @@
         / Bread crumb
         .row.page-titles
           .col-md-5.align-self-center
-            %h3.text-primary Building Options
+            %h3.text-primary Add Building Details
           .col-md-7.align-self-center
             %ol.breadcrumb
               %li.breadcrumb-item
@@ -150,48 +150,90 @@
             .col-lg-12
               .card
                 .basic-form
-                  %form{:action => "add_building", :method => "get", :name => "addbuilding"}
+                  /%form{:action => "save_building_detail", :method => "get", :name => "savebuildingdetail", :multipart => true}
+                  = form_for @building_details, :html => {:multipart => true} do |f|
                     .form-group
-                      %label BUILDING NAME
-                      %input.form-control{:value => "", :name => "building[name]", :placeholder => "Name of Building", :type => "text"}/
+                      = f.label :image
+                      = f.file_field :image, :class => "form-control"
                     .form-group
-                      %label DATE BUILT
-                      %input.form-control{:value => "",:name => "building[date_built]", :placeholder => "Date Built", :type => "date"}/
+                      = f.label :name
+                      = f.text_field :name, :readonly => "readonly", :class => "form-control", :value => "#{@name}"
                     .form-group
-                      %label BUILDING INFORMATION
-                      %input.form-control{:value => "",:name => "building[condition]", :placeholder => "INFORMATION", :rows => "10", :type => "text"}
-                    / %button.btn.btn-default{:onclick => "myFunction()", :type => "submit"} Submit
-                    %button.btn.btn-default{:type => "submit"} Submit
-                  .table-responsive.m-t-40
-                    %table#myTable.display.nowrap.table.table-hover.table-striped.table-bordered{:cellspacing => "0", :width => "100%"}
-                      %thead
-                        %tr
-                          %th NAME OF BUILDING
-                          %th DATE BUILT
-                          %th CONDITION
-                          %th OPTION
-                      %tbody
-                        / %tr
-                        /   %td CS LABORATORY
-                        /   %td April 28, 2018
-                        /   %td NOT OK
-                        / %tr
-                        /   %td CS LECTURE ROOM
-                        /   %td Febuary 31, 2018
-                        /   %td VERY OK
-                        / %tr
-                        /   %td UP BOTANICAL
-                        /   %td March 21, 2018
-                        /   %td NEEDS CLEANING
-                        - @buildings.each do |building|
-                          %tr
-                            %td= building.name
-                            %td= building.date_built
-                            %td= building.condition
-                            %td
-                              %a{:href => '#'} Delete
-                              %a{:href => '#'} Edit
-                    %button{:onclick => "myFunction()"} Try it
+                      = f.label :roofing
+                      = f.text_field :roofing, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :ceiling
+                      = f.text_field :ceiling, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :floor
+                      = f.text_field :floor, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :door
+                      = f.text_field :door, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :door_knobs
+                      = f.text_field :door_knobs, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :painting
+                      = f.text_field :painting, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :walling
+                      = f.text_field :walling, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :tiles
+                      = f.text_field :tiles, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :switches
+                      = f.text_field :switches, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :outlets
+                      = f.text_field :outlets, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :lights
+                      = f.text_field :lights, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :wires
+                      = f.text_field :wires, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :chairs
+                      = f.text_field :chairs, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :tables
+                      = f.text_field :tables, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :aircon
+                      = f.text_field :aircon, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :electic_fans
+                      = f.text_field :electic_fans, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :projectors
+                      = f.text_field :projectors, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :blackboard
+                      = f.text_field :blackboard, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :whiteboard
+                      = f.text_field :whiteboard, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :glassboard
+                      = f.text_field :glassboard, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :plumbing
+                      = f.text_field :plumbing, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :fence
+                      = f.text_field :fence, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :staircase
+                      = f.text_field :staircase, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :covered_walk
+                      = f.text_field :covered_walk, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    .form-group
+                      = f.label :comfort_room
+                      = f.text_field :comfort_room, :class => "form-control", :placeholder => "ok", :value => "ok"
+                    = f.submit :value => "Submit"
                 / Column
               / End PAge Content
             / End Container fluid

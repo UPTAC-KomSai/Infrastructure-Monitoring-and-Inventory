@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	root 'login#login'
+	resources :building_data
 	get '/log_user' => 'login#log_user'
 	get '/dashboard' => 'dashboard#dashboard'
 	get '/profile_information' => 'account#profile_information'
@@ -17,7 +18,12 @@ Rails.application.routes.draw do
 	get '/update/profile_information' => 'account#update_profile_information'
 	get '/historical_data' => 'historical_data#historical_data'
 	get '/add_historical_data' => 'historical_data#add_historical_data'
-	get '/show_building_detail' => 'view_buildings#show_building_detail'
-	post '/show_building_detail' => 'view_buildings#show_building_detail'
+	get '/show_building_detail' => 'building_data#show_building_detail'
+	post '/show_building_detail' => 'building_data#show_building_detail'
+	get '/new_building_detail' => 'building_data#new_building_detail'
+	post '/new_building_detail' => 'building_data#new_building_detail'
+	get '/create_building_detail' => 'building_data#create_building_detail'
+	post '/create_building_detail' => 'building_data#create_building_detail'
 	get '/add_historical_data' => 'historical_data#add_historical_data'
+	
 end
