@@ -127,7 +127,7 @@
         / Bread crumb
         .row.page-titles
           .col-md-5.align-self-center
-            %h3.text-primary Building Options
+            %h3.text-primary Edit Building Details
           .col-md-7.align-self-center
             %ol.breadcrumb
               %li.breadcrumb-item
@@ -142,18 +142,90 @@
             .col-lg-12
               .card
                 .basic-form
-                  %form{:action => "add_building", :method => "get", :name => "addbuilding"}
-                    .form-group
-                      %label BUILDING NAME
-                      %input.form-control{:value => "", :name => "building[name]", :placeholder => "#{@pangalan}", :type => "text"}/
-                    .form-group
-                      %label DATE BUILT
-                      %input.form-control{:value => "",:name => "building[date_built]", :placeholder => "Date Built", :type => "date"}/
-                    .form-group
-                      %label BUILDING INFORMATION
-                      %input.form-control{:value => "",:name => "building[condition]", :placeholder => "INFORMATION", :rows => "10", :type => "text"}
-                    / %button.btn.btn-default{:onclick => "myFunction()", :type => "submit"} Submit
-                    %button.btn.btn-default{:type => "submit"} Submit
+                  - @gusali.each do|g|
+                    = form_for @buil, url: {action: "update_building_detail"}, :html => {:multipart => true} do |f|
+                      .form-group
+                        = f.label :image
+                        = f.file_field :image, :class => "form-control"
+                      .form-group
+                        = f.label :name
+                        = f.text_field :name, :readonly => "readonly", :class => "form-control", :value => "#{g.name}"
+                      .form-group
+                        = f.label :roofing
+                        = f.text_field :roofing, :class => "form-control", :placeholder => "#{g.roofing}", :value => "#{g.roofing}"
+                      .form-group
+                        = f.label :ceiling
+                        = f.text_field :ceiling, :class => "form-control", :placeholder => "#{g.ceiling}", :value => "#{g.ceiling}"
+                      .form-group
+                        = f.label :floor
+                        = f.text_field :floor, :class => "form-control", :placeholder => "#{g.floor}", :value => "#{g.floor}"
+                      .form-group
+                        = f.label :door
+                        = f.text_field :door, :class => "form-control", :placeholder => "#{g.door}", :value => "#{g.door}"
+                      .form-group
+                        = f.label :door_knobs
+                        = f.text_field :door_knobs, :class => "form-control", :placeholder => "#{g.door_knobs}", :value => "#{g.door_knobs}"
+                      .form-group
+                        = f.label :painting
+                        = f.text_field :painting, :class => "form-control", :placeholder => "#{g.painting}", :value => "#{g.painting}"
+                      .form-group
+                        = f.label :walling
+                        = f.text_field :walling, :class => "form-control", :placeholder => "#{g.walling}", :value => "#{g.walling}"
+                      .form-group
+                        = f.label :tiles
+                        = f.text_field :tiles, :class => "form-control", :placeholder => "#{g.tiles}", :value => "#{g.tiles}"
+                      .form-group
+                        = f.label :switches
+                        = f.text_field :switches, :class => "form-control", :placeholder => "#{g.switches}", :value => "#{g.switches}"
+                      .form-group
+                        = f.label :outlets
+                        = f.text_field :outlets, :class => "form-control", :placeholder => "#{g.outlets}", :value => "#{g.outlets}"
+                      .form-group
+                        = f.label :lights
+                        = f.text_field :lights, :class => "form-control", :placeholder => "#{g.lights}", :value => "#{g.lights}"
+                      .form-group
+                        = f.label :wires
+                        = f.text_field :wires, :class => "form-control", :placeholder => "#{g.wires}", :value => "#{g.wires}"
+                      .form-group
+                        = f.label :chairs
+                        = f.text_field :chairs, :class => "form-control", :placeholder => "#{g.chairs}", :value => "#{g.chairs}"
+                      .form-group
+                        = f.label :tables
+                        = f.text_field :tables, :class => "form-control", :placeholder => "#{g.tables}", :value => "#{g.tables}"
+                      .form-group
+                        = f.label :aircon
+                        = f.text_field :aircon, :class => "form-control", :placeholder => "#{g.aircon}", :value =>"#{g.aircon}"
+                      .form-group
+                        = f.label :electic_fans
+                        = f.text_field :electic_fans, :class => "form-control", :placeholder => "#{g.electic_fans}", :value => "#{g.electic_fans}"
+                      .form-group
+                        = f.label :projectors
+                        = f.text_field :projectors, :class => "form-control", :placeholder => "#{g.projectors}", :value => "#{g.projectors}"
+                      .form-group
+                        = f.label :blackboard
+                        = f.text_field :blackboard, :class => "form-control", :placeholder => "#{g.blackboard}", :value => "#{g.blackboard}"
+                      .form-group
+                        = f.label :whiteboard
+                        = f.text_field :whiteboard, :class => "form-control", :placeholder => "#{g.whiteboard}", :value => "#{g.whiteboard}"
+                      .form-group
+                        = f.label :glassboard
+                        = f.text_field :glassboard, :class => "form-control", :placeholder => "#{g.blackboard}", :value => "#{g.blackboard}"
+                      .form-group
+                        = f.label :plumbing
+                        = f.text_field :plumbing, :class => "form-control", :placeholder => "#{g.plumbing}", :value => "#{g.plumbing}"
+                      .form-group
+                        = f.label :fence
+                        = f.text_field :fence, :class => "form-control", :placeholder => "#{g.fence}", :value => "#{g.fence}"
+                      .form-group
+                        = f.label :staircase
+                        = f.text_field :staircase, :class => "form-control", :placeholder => "#{g.staircase}", :value => "#{g.staircase}"
+                      .form-group
+                        = f.label :covered_walk
+                        = f.text_field :covered_walk, :class => "form-control", :placeholder => "#{g.covered_walk}", :value => "#{g.covered_walk}"
+                      .form-group
+                        = f.label :comfort_room
+                        = f.text_field :comfort_room, :class => "form-control", :placeholder => "#{g.comfort_room}", :value => "#{g.comfort_room}"
+                      = f.submit :value => "Submit"
                 / Column
               / End PAge Content
             / End Container fluid
