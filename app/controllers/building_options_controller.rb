@@ -17,7 +17,7 @@ class BuildingOptionsController < ApplicationController
 			@pangalan = 'Name has already been taken. Please enter a unique name!'
 			flash[:warning] = 'Name has already been taken. Please enter a unique name!'
 		end
-		redirect_to '/add_building'
+		redirect_to '/view_buildings'
 	else
 		@buildings = Building.all
 	end
@@ -27,13 +27,15 @@ class BuildingOptionsController < ApplicationController
 	bye_building = params[:id]
 	building_del = Building.where(name: bye_building)
 	building_datum_del = BuildingDatum.where(name: bye_building)
+	historical_datum_del = HistoricalDatum.where(name: bye_building)
 	Building.delete(building_del.ids)
 	BuildingDatum.delete(building_datum_del.ids)
-	redirect_to '/add_building'
+	HistoricalDatum.delete(historical_datum_del.ids)
+	redirect_to '/view_buildings'
   end
   
   def edit_building
-	@nawa = params[:id]
+	@gusali_edit = Building.where(name: params[:id])
   end
   
   def update_building

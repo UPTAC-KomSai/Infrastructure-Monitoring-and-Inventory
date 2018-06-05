@@ -23,7 +23,7 @@ class BuildingDataController < ApplicationController
     end
 	
 	def edit_building_view
-		@nawa = params[:id]
+		@gusali_edit = Building.where(name: params[:id])
 	end
   
 	def update_building_view

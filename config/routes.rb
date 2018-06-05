@@ -39,5 +39,17 @@ Rails.application.routes.draw do
 	post '/edit_building_detail' => 'building_data#edit_building_detail'
 	get '/update_building_detail' => 'building_data#update_building_detail'
 	post '/update_building_detail' => 'building_data#update_building_detail'
+	get '/show_historical_data' => 'historical_data#show_historical_data'
+	post '/show_historical_data' => 'historical_data#show_historical_data'
+	get '/add_historical_event' => 'historical_data#add_historical_event'
+	post '/add_historical_event' => 'historical_data#add_historical_event'
+	get '/create_event' => 'historical_data#create_event'
+	post '/create_event' => 'historical_data#create_event'
+	get '/delete_historical_event' => 'historical_data#delete_historical_event'
+	post '/delete_historical_event' => 'historical_data#delete_historical_event'
+	get '/edit_historical_event' => 'historical_data#edit_historical_event'
+	post '/edit_historical_event' => 'historical_data#edit_historical_event'
+	get '/update_historical_event' => 'historical_data#update_historical_event'
+	patch '/update_historical_event' => 'historical_data#update_historical_event'
 	
 end
