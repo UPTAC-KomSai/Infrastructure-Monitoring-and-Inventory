@@ -7,13 +7,13 @@
     / Tell the browser to be responsive to screen width
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
-  %body.fix-header.fix-sidebar
-    %p
-      zoomIn
-      %meta{:content => "", :name => "author"}/
-      / Favicon icon
-      %link{:href => "images/favicon.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %meta{:content => "", :name => "author"}/
+    / Favicon icon
+    %link{:href => "images/favicon.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
     %title Ela - Bootstrap Admin Dashboard Template
+    %link{:href => "css/lib/chartist/chartist.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/lib/owl.carousel.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/lib/owl.theme.default.min.css", :rel => "stylesheet"}/
     / Bootstrap Core CSS
     %link{:href => "css/lib/bootstrap/bootstrap.min.css", :rel => "stylesheet"}/
     / Custom CSS
@@ -24,6 +24,7 @@
     /[if lt IE 9]
       <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  %body.fix-header.fix-sidebar
     / Preloader - style you can find in spinners.css
     .preloader
       %svg.circular{:viewbox => "25 25 50 50"}

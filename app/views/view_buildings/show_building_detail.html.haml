@@ -133,14 +133,15 @@
       .page-wrapper
         / Bread crumb
         .row.page-titles
-          .col-md-5.align-self-center
-            %h3.text-primary= @bd
-          .col-md-7.align-self-center
-            %ol.breadcrumb
-              %li.breadcrumb-item
-                %a{:href => "javascript:void(0)"} Home
-              %li.breadcrumb-item.active View Buildings
-              %li.breadcrumb-item.active= @bd
+          - @building_datum.each do |bd|
+            .col-md-5.align-self-center
+              %h3.text-primary= bd.name
+            .col-md-7.align-self-center
+              %ol.breadcrumb
+                %li.breadcrumb-item
+                  %a{:href => "javascript:void(0)"} Home
+                %li.breadcrumb-item.active View Buildings
+                %li.breadcrumb-item.active= bd.name
         / End Bread crumb
         / Container fluid
         .container-fluid
@@ -247,7 +248,7 @@
                           %span{:style => "padding-left: 50px;"} Comfort Rooms: 
                           %span= b_dat.comfort_room
                 %br/
-                %a.text-right.text-info{:href => "/view_buildings"} Back
+                %a.text-left.text-info{:href => "/view_buildings"} Back
             / End PAge Content
           / End Container fluid
           / footer
