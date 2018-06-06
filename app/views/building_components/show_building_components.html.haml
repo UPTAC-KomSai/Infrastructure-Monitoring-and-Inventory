@@ -128,7 +128,7 @@
         / Bread crumb
         .row.page-titles
           .col-md-5.align-self-center
-            %h3.text-primary View Status
+            %h3.text-primary View "#{@building_name}" Status
           .col-md-7.align-self-center
             %ol.breadcrumb
               %li.breadcrumb-item
@@ -160,8 +160,8 @@
                           %td= building.category
                           %td
                             %span= link_to "View-Events |", show_historical_data_path(id: building)
-                            %span= link_to "Edit |", edit_building_view_path(id: building.name)
-                            %span= link_to "Delete", delete_building_path(id: building.name)
+                            %span= link_to "Edit |", edit_building_component_path(id: building)
+                            %span= link_to "Delete", delete_building_component_path(id: building)
                 %span= link_to "Add component to building", add_component_to_building_path(id: @building_name)
                 %span= link_to "Back", '/view_buildings'
               / Column

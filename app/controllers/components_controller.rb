@@ -1,7 +1,15 @@
 class ComponentsController < ApplicationController
 	def add_component_to_building
 		@building_name = params[:id]
-		@components = Component.all
+		@building_com = BuildingComponent.where(building_name: @building_name).select(:name)
+		
+		@list = ""
+		
+		if !@building_com.nil?
+			@components = Component.where('name NOT IN (?)', @building_com)
+		else
+			@components = Component.all
+		end
 	end
 	
 	def add_new_component

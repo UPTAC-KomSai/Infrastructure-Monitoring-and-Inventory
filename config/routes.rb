@@ -63,4 +63,10 @@ Rails.application.routes.draw do
 	put '/create_new_component' => 'components#create_new_component'
 	get '/show_photos' => 'historical_data#show_photos'
 	post '/show_photos' => 'historical_data#show_photos'
+	get '/delete_building_component' => 'building_components#delete_building_component'
+	put '/delete_building_component' => 'building_components#delete_building_component'
+	get '/edit_building_component' => 'building_components#edit_building_component'
+	put '/edit_building_component' => 'building_components#edit_building_component'
+	get '/update_building_component' => 'building_components#update_building_component'
+	put '/update_building_component' => 'building_components#update_building_component'
 end
