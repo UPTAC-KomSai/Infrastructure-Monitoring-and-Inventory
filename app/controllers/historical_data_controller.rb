@@ -23,21 +23,25 @@ class HistoricalDataController < ApplicationController
     end
 	
 	def show_historical_data
-		@pangalan_gusali = params[:id]
-		@building_history = HistoricalDatum.where(name: params[:id])
+		@bcom = BuildingComponent.find(params[:id])
+		session[:current_component] = params[:id]
+		@building_history = @bcom.historical_data
 	
 	end
 	
 	def add_historical_event
 		@pangalan_gusali = params[:id]
+		
 		@building_events = HistoricalDatum.new
 	
 	end
 	
 	def create_event
-		@building_events = HistoricalDatum.create!(historical_datum_params)
-		@news = News.create!(:news => "[#{@building_events.name}] new event: #{@building_events.event}")
-		redirect_to show_historical_data_path(id: @building_events.name)
+		@c = BuildingComponent.find(session[:current_component])
+		h = @c.historical_data.create(historical_datum_params)
+		
+		@news = News.create!(:news => "[#{h.name}] new event: #{h.event}")
+		redirect_to show_historical_data_path(id: session[:current_component])
 	end
 	
 	def delete_historical_event
