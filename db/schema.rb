@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180606085208) do
+ActiveRecord::Schema.define(version: 20180606104748) do
 
   create_table "accounts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20180606085208) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "building_component_id"
+    t.text     "component_name"
   end
 
   add_index "historical_data", ["building_component_id"], name: "index_historical_data_on_building_component_id"

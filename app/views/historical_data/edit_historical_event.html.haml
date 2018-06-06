@@ -144,9 +144,6 @@
                   - @b_edit.each do |b|
                     = form_for @building_edit, :url=> {action: 'update_historical_event'}, :html => {:multipart => true} do |f|
                       .form-group
-                        = f.label :name
-                        = f.text_field :name, :class => "form-control", :readonly => "readonly", :value => "#{b.name}"
-                      .form-group
                         = f.label :date
                         = f.date_field :date, :class => "form-control", :value => "#{b.date}"
                       .form-group
